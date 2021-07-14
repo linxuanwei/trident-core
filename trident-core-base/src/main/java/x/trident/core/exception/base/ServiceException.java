@@ -2,10 +2,12 @@ package x.trident.core.exception.base;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import x.trident.core.context.ApplicationPropertiesContext;
+import x.trident.core.exception.AbstractExceptionEnum;
+
+import java.util.Objects;
 
 import static x.trident.core.constants.BaseConstants.BASE_MODULE_NAME;
-
-import x.trident.core.exception.AbstractExceptionEnum;
 
 /**
  * 所有业务异常的基类
@@ -42,6 +44,18 @@ public class ServiceException extends RuntimeException {
      */
     private final String moduleName;
 
+
+    /**
+     * 根据错误码，提示话术直接抛出异常
+     */
+    public ServiceException(String errorCode, String userTip) {
+        super(userTip);
+        this.errorCode = errorCode;
+        String applicationName = ApplicationPropertiesContext.getInstance().getApplicationName();
+        this.moduleName = Objects.isNull(applicationName) ? BASE_MODULE_NAME : applicationName;
+        this.userTip = userTip;
+    }
+
     /**
      * 根据模块名，错误码，用户提示直接抛出异常
      */
@@ -69,9 +83,9 @@ public class ServiceException extends RuntimeException {
      */
     public ServiceException(AbstractExceptionEnum exception) {
         super(exception.getUserTip());
-        this.moduleName = BASE_MODULE_NAME;
+        String applicationName = ApplicationPropertiesContext.getInstance().getApplicationName();
+        this.moduleName = Objects.isNull(applicationName) ? BASE_MODULE_NAME : applicationName;
         this.errorCode = exception.getErrorCode();
         this.userTip = exception.getUserTip();
     }
-
 }
