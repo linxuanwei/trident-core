@@ -17,9 +17,7 @@ import static x.trident.core.constants.BaseConstants.BASE_MODULE_NAME;
  * 业务异常分为三种
  * <p>
  * 第一种是用户端操作的异常，例如用户输入参数为空，用户输入账号密码不正确
- * <p>
  * 第二种是当前系统业务逻辑出错，例如系统执行出错，磁盘空间不足
- * <p>
  * 第三种是第三方系统调用出错，例如文件服务调用失败，RPC调用超时
  *
  * @author 林选伟

@@ -4,7 +4,6 @@ import lombok.Getter;
 
 /**
  * 不同数据库类型的枚举
- * <p>
  * 用于标识mapping.xml中不同数据库的标识
  *
  * @author 林选伟

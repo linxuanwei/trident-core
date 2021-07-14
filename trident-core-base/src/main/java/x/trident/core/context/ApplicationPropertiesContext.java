@@ -5,7 +5,6 @@ import org.springframework.core.env.ConfigurableEnvironment;
 
 /**
  * application.yml或application.properties配置的快速获取
- * <p>
  * 此类的使用必须激活 ConfigInitListener
  *
  * @author 林选伟
@@ -18,7 +17,7 @@ public class ApplicationPropertiesContext {
 
     private String applicationName = null;
     private String contextPath = null;
-    private String profile = null;
+    private String env = null;
 
     private ApplicationPropertiesContext() {
     }
@@ -31,7 +30,7 @@ public class ApplicationPropertiesContext {
     public void initConfigs(ConfigurableEnvironment configurableEnvironment) {
         applicationName = configurableEnvironment.getProperty("spring.application.name");
         contextPath = configurableEnvironment.getProperty("server.servlet.context-path");
-        profile = configurableEnvironment.getProperty("spring.profiles.active");
+        env = configurableEnvironment.getProperty("spring.profiles.active");
     }
 
     /**
