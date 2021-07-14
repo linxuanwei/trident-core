@@ -1,11 +1,10 @@
 package x.trident.core.exception.base;
 
+import cn.hutool.core.util.StrUtil;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import x.trident.core.context.ApplicationPropertiesContext;
 import x.trident.core.exception.AbstractExceptionEnum;
-
-import java.util.Objects;
 
 import static x.trident.core.constants.BaseConstants.BASE_MODULE_NAME;
 
@@ -50,7 +49,7 @@ public class ServiceException extends RuntimeException {
         super(userTip);
         this.errorCode = errorCode;
         String applicationName = ApplicationPropertiesContext.getInstance().getApplicationName();
-        this.moduleName = Objects.isNull(applicationName) ? BASE_MODULE_NAME : applicationName;
+        this.moduleName = StrUtil.isBlank(applicationName) ? BASE_MODULE_NAME : applicationName;
         this.userTip = userTip;
     }
 
@@ -82,7 +81,7 @@ public class ServiceException extends RuntimeException {
     public ServiceException(AbstractExceptionEnum exception) {
         super(exception.getUserTip());
         String applicationName = ApplicationPropertiesContext.getInstance().getApplicationName();
-        this.moduleName = Objects.isNull(applicationName) ? BASE_MODULE_NAME : applicationName;
+        this.moduleName = StrUtil.isBlank(applicationName) ? BASE_MODULE_NAME : applicationName;
         this.errorCode = exception.getErrorCode();
         this.userTip = exception.getUserTip();
     }
