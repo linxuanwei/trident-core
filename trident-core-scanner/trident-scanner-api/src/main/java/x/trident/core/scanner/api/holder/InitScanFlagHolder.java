@@ -12,7 +12,12 @@ public class InitScanFlagHolder {
 
     private static Boolean initManagerFlag = false;
 
-    public static synchronized Boolean getFlag() {
+    /**
+     * 判断是否完成资源扫描初始化
+     *
+     * @return true-完成  false-未完成
+     */
+    public static synchronized Boolean hasInitialized() {
         return initManagerFlag;
     }
 

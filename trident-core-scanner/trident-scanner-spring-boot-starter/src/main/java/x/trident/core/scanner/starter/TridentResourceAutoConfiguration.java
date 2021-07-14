@@ -19,7 +19,7 @@ import x.trident.core.scanner.api.pojo.scanner.ScannerProperties;
  * @date 2020/12/1 17:24
  */
 @Configuration
-public class GunsResourceAutoConfiguration {
+public class TridentResourceAutoConfiguration {
 
     public static final String SCANNER_PREFIX = "scanner";
 
@@ -31,9 +31,6 @@ public class GunsResourceAutoConfiguration {
 
     /**
      * 资源扫描器的配置
-     *
-     * @author 林选伟
-     * @date 2020/12/3 17:54
      */
     @Bean
     @ConfigurationProperties(prefix = SCANNER_PREFIX)
@@ -46,7 +43,7 @@ public class GunsResourceAutoConfiguration {
      */
     @Bean
     @ConditionalOnMissingBean(ApiResourceScanner.class)
-    @ConditionalOnProperty(prefix = GunsResourceAutoConfiguration.SCANNER_PREFIX, name = "open", havingValue = "true")
+    @ConditionalOnProperty(prefix = TridentResourceAutoConfiguration.SCANNER_PREFIX, name = "open", havingValue = "true")
     public ApiResourceScanner apiResourceScanner(ResourceCollectorApi resourceCollectorApi, ScannerProperties scannerProperties) {
         if (StrUtil.isBlank(scannerProperties.getAppCode())) {
             scannerProperties.setAppCode(springApplicationName);
@@ -62,7 +59,7 @@ public class GunsResourceAutoConfiguration {
      */
     @Bean
     @ConditionalOnMissingBean(ResourceCollectorApi.class)
-    @ConditionalOnProperty(prefix = GunsResourceAutoConfiguration.SCANNER_PREFIX, name = "open", havingValue = "true")
+    @ConditionalOnProperty(prefix = TridentResourceAutoConfiguration.SCANNER_PREFIX, name = "open", havingValue = "true")
     public ResourceCollectorApi resourceCollectorApi() {
         return new DefaultResourceCollector();
     }

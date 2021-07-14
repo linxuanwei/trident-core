@@ -1,5 +1,9 @@
 package x.trident.core.scanner;
 
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.core.Ordered;
 import x.trident.core.listener.ApplicationReadyListener;
 import x.trident.core.scanner.api.ResourceCollectorApi;
 import x.trident.core.scanner.api.ResourceReportApi;
@@ -8,10 +12,6 @@ import x.trident.core.scanner.api.holder.InitScanFlagHolder;
 import x.trident.core.scanner.api.pojo.resource.ReportResourceParam;
 import x.trident.core.scanner.api.pojo.resource.ResourceDefinition;
 import x.trident.core.scanner.api.pojo.scanner.ScannerProperties;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.core.Ordered;
 
 import java.util.Map;
 
@@ -26,17 +26,25 @@ public class ResourceReportListener extends ApplicationReadyListener implements 
 
     @Override
     public void eventCallback(ApplicationReadyEvent event) {
+        initScanner(event);
+    }
 
+    @Override
+    public int getOrder() {
+        return ScannerConstants.REPORT_RESOURCE_LISTENER_SORT;
+    }
+
+    private void initScanner(ApplicationReadyEvent event) {
         ConfigurableApplicationContext applicationContext = event.getApplicationContext();
 
         // 获取有没有开资源扫描开关
         ScannerProperties scannerProperties = applicationContext.getBean(ScannerProperties.class);
-        if (!scannerProperties.getOpen()) {
+        if (Boolean.FALSE.equals(scannerProperties.getOpen())) {
             return;
         }
 
         // 如果项目还没进行资源扫描
-        if (!InitScanFlagHolder.getFlag()) {
+        if (Boolean.FALSE.equals(InitScanFlagHolder.hasInitialized())) {
 
             // 获取当前系统的所有资源
             ResourceCollectorApi resourceCollectorApi = applicationContext.getBean(ResourceCollectorApi.class);
@@ -49,12 +57,6 @@ public class ResourceReportListener extends ApplicationReadyListener implements 
             // 设置标识已经扫描过
             InitScanFlagHolder.setFlag();
         }
-
-    }
-
-    @Override
-    public int getOrder() {
-        return ScannerConstants.REPORT_RESOURCE_LISTENER_SORT;
     }
 
 }
