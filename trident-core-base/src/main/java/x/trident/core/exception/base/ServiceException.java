@@ -47,9 +47,8 @@ public class ServiceException extends RuntimeException {
      */
     public ServiceException(String errorCode, String userTip) {
         super(userTip);
+        this.moduleName = getApplicationName();
         this.errorCode = errorCode;
-        String applicationName = ApplicationPropertiesContext.getInstance().getApplicationName();
-        this.moduleName = StrUtil.isBlank(applicationName) ? BASE_MODULE_NAME : applicationName;
         this.userTip = userTip;
     }
 
@@ -80,9 +79,18 @@ public class ServiceException extends RuntimeException {
      */
     public ServiceException(AbstractExceptionEnum exception) {
         super(exception.getUserTip());
-        String applicationName = ApplicationPropertiesContext.getInstance().getApplicationName();
-        this.moduleName = StrUtil.isBlank(applicationName) ? BASE_MODULE_NAME : applicationName;
+        this.moduleName = getApplicationName();
         this.errorCode = exception.getErrorCode();
         this.userTip = exception.getUserTip();
+    }
+
+    /**
+     * 获取应用名称，抛错的时候可以知道是哪个应用抛错的
+     *
+     * @return 应用名
+     */
+    private String getApplicationName() {
+        String applicationName = ApplicationPropertiesContext.getInstance().getApplicationName();
+        return StrUtil.isBlank(applicationName) ? BASE_MODULE_NAME : applicationName;
     }
 }

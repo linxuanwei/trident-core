@@ -21,6 +21,7 @@
 
     <modules>
         <module>trident-core-base</module>
+        <module>trident-core-scanner</module>
     </modules>
 
     <properties>

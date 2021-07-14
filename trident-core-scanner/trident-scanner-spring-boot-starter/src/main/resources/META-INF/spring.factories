@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  x.trident.core.scanner.starter.GunsResourceAutoConfiguration
+org.springframework.context.ApplicationListener=\
+  x.trident.core.scanner.ResourceReportListener
