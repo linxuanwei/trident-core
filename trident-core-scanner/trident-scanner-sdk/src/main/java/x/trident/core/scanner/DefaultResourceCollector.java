@@ -37,7 +37,7 @@ public class DefaultResourceCollector implements ResourceCollectorApi {
 
     @Override
     public void collectResources(List<ResourceDefinition> apiResource) {
-        if (apiResource != null && apiResource.size() > 0) {
+        if (apiResource != null && !apiResource.isEmpty()) {
             for (ResourceDefinition resourceDefinition : apiResource) {
                 ResourceDefinition alreadyFlag = resourceDefinitions.get(resourceDefinition.getResourceCode());
                 if (alreadyFlag != null) {

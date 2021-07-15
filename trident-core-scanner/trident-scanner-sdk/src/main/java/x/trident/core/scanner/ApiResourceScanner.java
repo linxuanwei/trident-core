@@ -3,6 +3,12 @@ package x.trident.core.scanner;
 import cn.hutool.core.exceptions.UtilException;
 import cn.hutool.core.net.NetUtil;
 import cn.hutool.core.util.StrUtil;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 import x.trident.core.scanner.api.ResourceCollectorApi;
 import x.trident.core.scanner.api.annotation.ApiResource;
 import x.trident.core.scanner.api.annotation.GetResource;
@@ -14,12 +20,6 @@ import x.trident.core.scanner.api.pojo.resource.ResourceDefinition;
 import x.trident.core.scanner.api.pojo.scanner.ScannerProperties;
 import x.trident.core.scanner.api.util.ClassReflectUtil;
 import x.trident.core.scanner.api.util.MethodReflectUtil;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.config.BeanPostProcessor;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 import x.trident.core.util.AopTargetUtils;
 
 import java.lang.annotation.Annotation;
@@ -90,9 +90,6 @@ public class ApiResourceScanner implements BeanPostProcessor {
 
     /**
      * 判断一个类是否是控制器
-     *
-     * @author 林选伟
-     * @date 2020/12/9 11:21
      */
     private boolean getControllerFlag(Class<?> clazz) {
         Annotation[] annotations = clazz.getAnnotations();
@@ -106,9 +103,6 @@ public class ApiResourceScanner implements BeanPostProcessor {
 
     /**
      * 扫描整个类中包含的所有@ApiResource资源
-     *
-     * @author 林选伟
-     * @date 2020/12/9 11:21
      */
     private List<ResourceDefinition> doScan(Class<?> clazz) {
         // 绑定类的code-中文名称映射
@@ -160,9 +154,6 @@ public class ApiResourceScanner implements BeanPostProcessor {
 
     /**
      * 缓存扫描到的api资源
-     *
-     * @author 林选伟
-     * @date 2020/12/9 11:22
      */
     private void persistApiResources(List<ResourceDefinition> apiResources) {
         resourceCollectorApi.collectResources(apiResources);
@@ -170,9 +161,6 @@ public class ApiResourceScanner implements BeanPostProcessor {
 
     /**
      * 根据类信息，方法信息，注解信息创建ResourceDefinition对象
-     *
-     * @author 林选伟
-     * @date 2020/12/9 11:22
      */
     private ResourceDefinition createDefinition(Class<?> controllerClass, Method method, Annotation apiResource) {
         ResourceDefinition resourceDefinition = new ResourceDefinition();
@@ -291,8 +279,6 @@ public class ApiResourceScanner implements BeanPostProcessor {
      *
      * @param clazz 控制器的类
      * @param path  控制器方法注解上的路径
-     * @author 林选伟
-     * @date 2021/1/5 14:43
      */
     private String createControllerPath(Class<?> clazz, String path) {
         String controllerPath;
@@ -322,8 +308,6 @@ public class ApiResourceScanner implements BeanPostProcessor {
      * 根据appCode和contextPath等，拼出整个接口的路径
      *
      * @param controllerMethodPath 控制器和控制器方法的path的组合
-     * @author 林选伟
-     * @date 2020/12/14 22:17
      */
     private String createFinalUrl(String controllerMethodPath) {
 
@@ -351,9 +335,6 @@ public class ApiResourceScanner implements BeanPostProcessor {
 
     /**
      * 调用注解上的某个方法，并获取结果
-     *
-     * @author 林选伟
-     * @date 2020/12/8 17:13
      */
     private <T> T invokeAnnotationMethod(Annotation apiResource, String methodName, Class<T> resultType) {
         try {
