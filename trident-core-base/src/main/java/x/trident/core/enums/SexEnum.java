@@ -33,7 +33,7 @@ public enum SexEnum {
     /**
      * 根据code获取枚举
      *
-     * @author fengshuonan
+     * @author 林选伟
      * @date 2020/10/29 18:59
      */
     public static SexEnum codeToEnum(String code) {

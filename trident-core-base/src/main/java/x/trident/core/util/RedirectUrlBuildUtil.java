@@ -16,6 +16,8 @@ import java.util.Map;
  */
 @Slf4j
 public class RedirectUrlBuildUtil {
+    private RedirectUrlBuildUtil() {
+    }
 
     /**
      * 构建redirect url

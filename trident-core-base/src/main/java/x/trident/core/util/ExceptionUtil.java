@@ -11,6 +11,8 @@ import x.trident.core.pojo.response.ErrorResponseData;
  * @date 2020/12/16 16:03
  */
 public class ExceptionUtil {
+    private ExceptionUtil() {
+    }
 
     /**
      * 获取第一条包含参数包名的堆栈记录

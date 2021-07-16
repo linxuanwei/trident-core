@@ -6,41 +6,43 @@ package x.trident.core.cache.api.constants;
  * @author linxuanwei
  * @date 2020/10/22 16:55
  */
-public interface CacheConstants {
+public class CacheConstants {
+    private CacheConstants() {
+    }
 
     /**
      * 缓存模块的名称
      */
-    String CACHE_MODULE_NAME = "trident-core-cache";
+    public static final String CACHE_MODULE_NAME = "trident-core-cache";
 
     /**
      * 缓存模块的异常步进值
      */
-    String CACHE_EXCEPTION_STEP_CODE = "07";
+    public static final String CACHE_EXCEPTION_STEP_CODE = "07";
 
     /**
      * 缓存的分割符号
      */
-    String CACHE_DELIMITER = ":";
+    public static final String CACHE_DELIMITER = ":";
 
     /**
      * 给hutools缓存用的无限过期时间
      */
-    Long NONE_EXPIRED_TIME = 1000L * 3600 * 24 * 999;
+    public static final Long NONE_EXPIRED_TIME = 1000L * 3600 * 24 * 999;
 
     /**
      * 默认缓存的过期时间，10分钟
      */
-    Long DEFAULT_CACHE_TIMEOUT = 1000L * 60 * 10;
+    public static final Long DEFAULT_CACHE_TIMEOUT = 1000L * 60 * 10;
 
     /**
      * 默认object对象缓存的缓存前缀
      */
-    String DEFAULT_OBJECT_CACHE_PREFIX = "DEFAULT:OBJECTS:";
+    public static final String DEFAULT_OBJECT_CACHE_PREFIX = "DEFAULT:OBJECTS:";
 
     /**
      * 默认String对象缓存的缓存前缀
      */
-    String DEFAULT_STRING_CACHE_PREFIX = "DEFAULT:STRINGS:";
+    public static final String DEFAULT_STRING_CACHE_PREFIX = "DEFAULT:STRINGS:";
 
 }

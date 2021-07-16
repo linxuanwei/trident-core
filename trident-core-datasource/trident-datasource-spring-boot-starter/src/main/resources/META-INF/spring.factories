@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  x.trident.core.datasource.sdk.starter.TridentDataSourceContainerAutoConfiguration
+org.springframework.context.ApplicationListener=\
+  DataSourceInitListener

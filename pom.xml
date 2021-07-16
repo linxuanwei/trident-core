@@ -23,6 +23,12 @@
         <module>trident-core-base</module>
         <module>trident-core-scanner</module>
         <module>trident-core-cache</module>
+        <module>trident-core-datasource</module>
+        <module>trident-core-db</module>
+        <module>trident-core-timer</module>
+        <module>trident-core-config</module>
+        <module>trident-core-validator</module>
+        <module>trident-core-auth</module>
     </modules>
 
     <properties>

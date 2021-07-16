@@ -7,6 +7,8 @@ package x.trident.core.constants;
  * @date 2020/10/15 15:50
  */
 public class TreeConstants {
+    private TreeConstants() {
+    }
 
     /**
      * 一级节点的父节点id

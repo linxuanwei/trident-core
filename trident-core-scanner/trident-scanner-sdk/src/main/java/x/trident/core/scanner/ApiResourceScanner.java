@@ -216,7 +216,7 @@ public class ApiResourceScanner implements BeanPostProcessor {
         resourceDefinition.setUrl(createFinalUrl(controllerMethodPath));
 
         // 如果注解标识是视图类型，则判断该资源是视图类型（优先级最高）
-        if (viewFlag) {
+        if (Boolean.TRUE.equals(viewFlag)) {
             resourceDefinition.setViewFlag(true);
         }
         // 如果资源url是以/view开头，则是视图类型

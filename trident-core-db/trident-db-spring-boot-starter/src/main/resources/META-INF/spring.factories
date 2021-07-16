@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  x.trident.core.db.starter.TridentDataSourceAutoConfiguration,\
+  x.trident.core.db.starter.TridentDruidPropertiesAutoConfiguration,\
+  x.trident.core.db.starter.TridentMyBatisPlusAutoConfiguration,\
+  x.trident.core.db.starter.TridentDruidMonitorAutoConfiguration

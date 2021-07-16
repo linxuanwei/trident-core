@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>trident-core-auth</artifactId>
+        <groupId>x.trident</groupId>
+        <version>1.0.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>trident-auth-api</artifactId>
+    <packaging>jar</packaging>
+
+    <dependencies>
+
+        <!--config模块的api-->
+        <!--权限相关的配置要放到容器里-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-config-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!--参数校验的api-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-validator-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!--资源扫描的api-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-scanner-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+    </build>
+
+</project>

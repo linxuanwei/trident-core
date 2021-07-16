@@ -26,6 +26,8 @@ import java.util.List;
  */
 @Slf4j
 public class HttpServletUtil {
+    private HttpServletUtil() {
+    }
 
     /**
      * 本机ip地址

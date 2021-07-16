@@ -12,11 +12,13 @@ import java.io.IOException;
 /**
  * http响应信息的直接渲染工具
  *
- * @author fengshuonan
+ * @author 林选伟
  * @date 2020/12/15 21:39
  */
 @Slf4j
 public class ResponseRenderUtil {
+    private ResponseRenderUtil() {
+    }
 
     /**
      * 渲染接口json信息

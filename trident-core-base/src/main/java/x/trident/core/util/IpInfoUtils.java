@@ -10,6 +10,8 @@ import java.net.UnknownHostException;
  * @date 2021/1/10 14:25
  */
 public class IpInfoUtils {
+    private IpInfoUtils() {
+    }
 
     /**
      * 获取当前机器的hostname

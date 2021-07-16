@@ -10,6 +10,8 @@ import x.trident.core.enums.DbTypeEnum;
  * @date 2021/3/27 21:24
  */
 public class DatabaseTypeUtil {
+    private DatabaseTypeUtil() {
+    }
 
     /**
      * 判断数据库类型

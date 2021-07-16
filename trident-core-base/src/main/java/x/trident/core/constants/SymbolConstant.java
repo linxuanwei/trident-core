@@ -7,6 +7,8 @@ package x.trident.core.constants;
  * @date 2021/2/8 11:59
  */
 public class SymbolConstant {
+    private SymbolConstant() {
+    }
 
     public static final String COMMA = ",";
 
