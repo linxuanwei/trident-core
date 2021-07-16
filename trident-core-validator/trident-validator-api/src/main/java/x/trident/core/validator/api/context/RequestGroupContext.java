@@ -15,9 +15,6 @@ public class RequestGroupContext {
 
     /**
      * 设置临时的校验分组
-     *
-     * @author 林选伟
-     * @date 2020/11/4 14:32
      */
     public static void set(Class<?> groupValue) {
         GROUP_CLASS_HOLDER.set(groupValue);
@@ -25,9 +22,6 @@ public class RequestGroupContext {
 
     /**
      * 获取临时校验分组
-     *
-     * @author 林选伟
-     * @date 2020/11/4 14:32
      */
     public static Class<?> get() {
         return GROUP_CLASS_HOLDER.get();
@@ -35,9 +29,6 @@ public class RequestGroupContext {
 
     /**
      * 清除临时缓存的校验分组
-     *
-     * @author 林选伟
-     * @date 2020/11/4 14:32
      */
     public static void clear() {
         GROUP_CLASS_HOLDER.remove();

@@ -19,9 +19,6 @@ public class RequestParamContext {
 
     /**
      * 保存请求参数
-     *
-     * @author stylefeng
-     * @date 2020/6/21 20:17
      */
     public static void set(Dict requestParam) {
         CONTEXT_HOLDER.set(requestParam);
@@ -29,9 +26,6 @@ public class RequestParamContext {
 
     /**
      * 保存请求参数
-     *
-     * @author stylefeng
-     * @date 2020/6/21 20:17
      */
     public static void setObject(Object requestParam) {
 
@@ -48,9 +42,6 @@ public class RequestParamContext {
 
     /**
      * 获取请求参数
-     *
-     * @author stylefeng
-     * @date 2020/6/21 20:17
      */
     public static Dict get() {
         return CONTEXT_HOLDER.get();
@@ -58,9 +49,6 @@ public class RequestParamContext {
 
     /**
      * 清除请求参数
-     *
-     * @author stylefeng
-     * @date 2020/6/21 20:17
      */
     public static void clear() {
         CONTEXT_HOLDER.remove();
