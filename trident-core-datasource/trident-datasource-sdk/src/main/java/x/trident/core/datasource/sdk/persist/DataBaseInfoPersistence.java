@@ -3,15 +3,15 @@ package x.trident.core.datasource.sdk.persist;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.io.IoUtil;
 import cn.hutool.core.util.StrUtil;
-import x.trident.core.db.api.pojo.druid.DruidProperties;
+import com.baomidou.mybatisplus.core.toolkit.IdWorker;
+import lombok.extern.slf4j.Slf4j;
 import x.trident.core.datasource.api.constants.DatasourceContainerConstants;
 import x.trident.core.datasource.api.exception.DatasourceContainerException;
 import x.trident.core.datasource.api.exception.enums.DatasourceContainerExceptionEnum;
 import x.trident.core.datasource.sdk.persist.sqladapter.AddDatabaseInfoSql;
 import x.trident.core.datasource.sdk.persist.sqladapter.DatabaseListSql;
 import x.trident.core.datasource.sdk.persist.sqladapter.DeleteDatabaseInfoSql;
-import com.baomidou.mybatisplus.core.toolkit.IdWorker;
-import lombok.extern.slf4j.Slf4j;
+import x.trident.core.db.api.pojo.druid.DruidProperties;
 
 import java.sql.*;
 import java.util.Date;
@@ -35,9 +35,6 @@ public class DataBaseInfoPersistence {
 
     /**
      * 查询所有数据源列表
-     *
-     * @author 林选伟
-     * @date 2020/10/31 23:55
      */
     public Map<String, DruidProperties> getAllDataBaseInfo() {
         Map<String, DruidProperties> dataSourceList = new HashMap<>(16);
@@ -51,9 +48,9 @@ public class DataBaseInfoPersistence {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
-                DruidProperties druidProperties = createDruidProperties(resultSet);
+                DruidProperties properties = createDruidProperties(resultSet);
                 String dbName = resultSet.getString("db_name");
-                dataSourceList.put(dbName, druidProperties);
+                dataSourceList.put(dbName, properties);
             }
 
             return dataSourceList;
@@ -69,9 +66,6 @@ public class DataBaseInfoPersistence {
 
     /**
      * 初始化master的数据源，要和properties配置的数据源一致
-     *
-     * @author 林选伟
-     * @date 2020/10/31 23:55
      */
     public void createMasterDatabaseInfo() {
         Connection conn = null;
@@ -105,9 +99,6 @@ public class DataBaseInfoPersistence {
 
     /**
      * 删除master的数据源信息
-     *
-     * @author 林选伟
-     * @date 2020/10/31 23:55
      */
     public void deleteMasterDatabaseInfo() {
         Connection conn = null;
@@ -131,29 +122,26 @@ public class DataBaseInfoPersistence {
 
     /**
      * 通过查询结果组装druidProperties
-     *
-     * @author 林选伟
-     * @date 2020/10/31 23:55
      */
     private DruidProperties createDruidProperties(ResultSet resultSet) {
 
-        DruidProperties druidProperties = new DruidProperties();
+        DruidProperties properties = new DruidProperties();
 
-        druidProperties.setTestOnBorrow(true);
-        druidProperties.setTestOnReturn(true);
+        properties.setTestOnBorrow(true);
+        properties.setTestOnReturn(true);
 
         try {
-            druidProperties.setDriverClassName(resultSet.getString("jdbc_driver"));
-            druidProperties.setUrl(resultSet.getString("jdbc_url"));
-            druidProperties.setUsername(resultSet.getString("username"));
-            druidProperties.setPassword(resultSet.getString("password"));
+            properties.setDriverClassName(resultSet.getString("jdbc_driver"));
+            properties.setUrl(resultSet.getString("jdbc_url"));
+            properties.setUsername(resultSet.getString("username"));
+            properties.setPassword(resultSet.getString("password"));
         } catch (SQLException exception) {
             log.info("根据数据库查询结果，创建DruidProperties失败！", exception);
             String userTip = StrUtil.format(DatasourceContainerExceptionEnum.CREATE_PROP_DAO_ERROR.getUserTip(), exception.getMessage());
             throw new DatasourceContainerException(DatasourceContainerExceptionEnum.CREATE_PROP_DAO_ERROR, userTip);
         }
 
-        return druidProperties;
+        return properties;
     }
 
 }

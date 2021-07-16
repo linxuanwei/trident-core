@@ -17,7 +17,6 @@ public class CurrentDataSourceContext {
      * 设置数据源类型
      *
      * @param dataSourceName 数据库类型
-     * @date 2020/8/24
      */
     public static void setDataSourceName(String dataSourceName) {
         DATASOURCE_CONTEXT_HOLDER.set(dataSourceName);
@@ -25,9 +24,6 @@ public class CurrentDataSourceContext {
 
     /**
      * 获取数据源类型
-     *
-     * @author 林选伟
-     * @date 2020/8/24
      */
     public static String getDataSourceName() {
         return DATASOURCE_CONTEXT_HOLDER.get();
@@ -35,9 +31,6 @@ public class CurrentDataSourceContext {
 
     /**
      * 清除数据源类型
-     *
-     * @author 林选伟
-     * @date 2020/8/24
      */
     public static void clearDataSourceName() {
         DATASOURCE_CONTEXT_HOLDER.remove();

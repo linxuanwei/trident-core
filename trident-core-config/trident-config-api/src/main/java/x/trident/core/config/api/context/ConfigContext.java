@@ -24,9 +24,6 @@ public class ConfigContext {
 
     /**
      * 获取config操作接口
-     *
-     * @author 林选伟
-     * @date 2020/10/17 14:30
      */
     public static ConfigApi me() {
         if (configApi == null) {
@@ -37,9 +34,6 @@ public class ConfigContext {
 
     /**
      * 设置config api的实现
-     *
-     * @author 林选伟
-     * @date 2020/12/4 14:35
      */
     public static void setConfigApi(ConfigApi configApi) {
         ConfigContext.configApi = configApi;

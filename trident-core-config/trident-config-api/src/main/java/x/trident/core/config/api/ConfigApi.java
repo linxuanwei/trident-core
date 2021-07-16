@@ -19,8 +19,6 @@ public interface ConfigApi {
      * 初始化配置表中的所有配置
      *
      * @param configs 配置表的所有配置
-     * @author 林选伟
-     * @date 2020/10/17 14:11
      */
     void initConfig(Map<String, Object> configs);
 
@@ -28,8 +26,6 @@ public interface ConfigApi {
      * 获取配置表中所有配置
      *
      * @return 系统配置表中所有的配置
-     * @author 林选伟
-     * @date 2020/10/17 14:07
      */
     Map<String, Object> getAllConfigs();
 
@@ -37,8 +33,6 @@ public interface ConfigApi {
      * 获取所有配置的名称集合
      *
      * @return 所有配置的名称
-     * @author 林选伟
-     * @date 2020/10/17 14:31
      */
     Set<String> getAllConfigKeys();
 
@@ -49,8 +43,6 @@ public interface ConfigApi {
      *
      * @param key   配置标识
      * @param value 配置具体值
-     * @author 林选伟
-     * @date 2020/10/17 14:14
      */
     void putConfig(String key, Object value);
 
@@ -58,8 +50,6 @@ public interface ConfigApi {
      * 删除一个配置项
      *
      * @param key 配置名称
-     * @author 林选伟
-     * @date 2020/10/17 18:45
      */
     void deleteConfig(String key);
 
@@ -70,8 +60,6 @@ public interface ConfigApi {
      * @param clazz      返回变量值的类型
      * @return 配置的值
      * @throws ConfigException 如果值为空抛出异常会
-     * @author stylefeng
-     * @date 2020/6/20 22:03
      */
     <T> T getConfigValue(String configCode, Class<T> clazz) throws ConfigException;
 
@@ -81,8 +69,6 @@ public interface ConfigApi {
      * @param configCode 变量名称，对应sys_config表中的code
      * @param clazz      返回变量值的类型
      * @return 配置的值
-     * @author stylefeng
-     * @date 2020/6/20 22:03
      */
     <T> T getConfigValueNullable(String configCode, Class<T> clazz);
 
@@ -93,8 +79,6 @@ public interface ConfigApi {
      * @param clazz        返回变量值的类型
      * @param defaultValue 如果结果为空返回此默认值
      * @return 配置的值
-     * @author stylefeng
-     * @date 2020/6/20 22:03
      */
     <T> T getSysConfigValueWithDefault(String configCode, Class<T> clazz, T defaultValue);
 

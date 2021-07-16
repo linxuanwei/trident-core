@@ -19,9 +19,6 @@ public class DynamicDataSource extends AbstractRoutingDataSource {
 
     /**
      * 决断当前正在进行的service或者mapper用哪个数据源
-     *
-     * @author 林选伟
-     * @date 2020/11/1 0:08
      */
     @Override
     protected DataSource determineDataSource() {
