@@ -3,11 +3,10 @@ package x.trident.core.auth.api.pojo.login;
 
 import cn.hutool.core.lang.Dict;
 import cn.hutool.core.util.StrUtil;
+import lombok.Data;
 import x.trident.core.auth.api.enums.DataScopeTypeEnum;
 import x.trident.core.auth.api.pojo.login.basic.SimpleRoleInfo;
 import x.trident.core.auth.api.pojo.login.basic.SimpleUserInfo;
-
-import lombok.Data;
 import x.trident.core.constants.BaseConstants;
 import x.trident.core.scanner.api.annotation.ChineseDescription;
 
@@ -30,7 +29,7 @@ public class LoginUser implements Serializable {
      * 用户主键id
      */
     @ChineseDescription("用户主键id")
-    private Long userId;
+    private Long uid;
 
     /**
      * 账号
@@ -142,7 +141,7 @@ public class LoginUser implements Serializable {
         AtomicReference<String> returnUrl = new AtomicReference<>(StrUtil.EMPTY);
         Optional.ofNullable(this.wsUrl).ifPresent(url -> {
             Map<String, Long> user = new HashMap<>(1);
-            user.put("userId", this.userId);
+            user.put("userId", this.uid);
             returnUrl.set(StrUtil.format(url, user));
         });
         return returnUrl.get();

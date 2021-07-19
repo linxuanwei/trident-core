@@ -10,8 +10,8 @@ import java.sql.SQLException;
 /**
  * 抽象动态获取数据源
  *
- * @author TaoYu
- * @since 2.2.0
+ * @author 林选伟
+ * @date 2020/10/31 23:47
  */
 public abstract class AbstractRoutingDataSource extends AbstractDataSource {
 

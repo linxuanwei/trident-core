@@ -1,10 +1,12 @@
 
 package x.trident.core.db.mp.dbid;
 
-import x.trident.core.db.api.enums.DbTypeEnum;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.mapping.DatabaseIdProvider;
+import x.trident.core.db.api.enums.DbTypeEnum;
 
 import javax.sql.DataSource;
+import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
@@ -15,24 +17,26 @@ import java.sql.SQLException;
  * @author 林选伟
  * @date 2020/10/16 17:02
  */
+@Slf4j
 public class CustomDatabaseIdProvider implements DatabaseIdProvider {
 
     @Override
     public String getDatabaseId(DataSource dataSource) throws SQLException {
+        try (Connection connection = dataSource.getConnection()) {
+            String url = connection.getMetaData().getURL();
 
-        String url = dataSource.getConnection().getMetaData().getURL();
+            if (url.contains(DbTypeEnum.ORACLE.getCode())) {
+                return DbTypeEnum.ORACLE.getCode();
+            }
+            if (url.contains(DbTypeEnum.MS_SQL.getCode())) {
+                return DbTypeEnum.MS_SQL.getCode();
+            }
+            if (url.contains(DbTypeEnum.PG_SQL.getCode())) {
+                return DbTypeEnum.PG_SQL.getCode();
+            }
 
-        if (url.contains(DbTypeEnum.ORACLE.getCode())) {
-            return DbTypeEnum.ORACLE.getCode();
+            return DbTypeEnum.MYSQL.getCode();
         }
-        if (url.contains(DbTypeEnum.MS_SQL.getCode())) {
-            return DbTypeEnum.MS_SQL.getCode();
-        }
-        if (url.contains(DbTypeEnum.PG_SQL.getCode())) {
-            return DbTypeEnum.PG_SQL.getCode();
-        }
-
-        return DbTypeEnum.MYSQL.getCode();
     }
 
 }

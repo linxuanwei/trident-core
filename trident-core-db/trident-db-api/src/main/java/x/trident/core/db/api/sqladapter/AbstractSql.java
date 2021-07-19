@@ -16,8 +16,6 @@ public abstract class AbstractSql {
      *
      * @param jdbcUrl 数据连接的url
      * @return 具体的sql
-     * @author 林选伟
-     * @date 2020/10/31 23:44
      */
     public String getSql(String jdbcUrl) {
         if (jdbcUrl.contains(DbTypeEnum.ORACLE.getCode())) {
@@ -36,8 +34,6 @@ public abstract class AbstractSql {
      * 获取mysql的sql语句
      *
      * @return 具体的sql
-     * @author 林选伟
-     * @date 2020/10/31 23:45
      */
     protected abstract String mysql();
 
@@ -45,8 +41,6 @@ public abstract class AbstractSql {
      * 获取sqlServer的sql语句
      *
      * @return 具体的sql
-     * @author 林选伟
-     * @date 2020/10/31 23:45
      */
     protected abstract String sqlServer();
 
@@ -54,17 +48,13 @@ public abstract class AbstractSql {
      * 获取pgSql的sql语句
      *
      * @return 具体的sql
-     * @author 林选伟
-     * @date 2020/10/31 23:45
-     */
+     **/
     protected abstract String pgSql();
 
     /**
      * 获取oracle的sql语句
      *
      * @return 具体的sql
-     * @author 林选伟
-     * @date 2020/10/31 23:45
      */
     protected abstract String oracle();
 

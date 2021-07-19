@@ -1,0 +1,5 @@
+jwt功能的spring boot自动加载模块
+
+config系统配置：
+SYS_JWT_SECRET：默认随机密钥
+SYS_JWT_TIMEOUT_SECONDS：默认1天

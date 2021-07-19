@@ -1,8 +1,8 @@
 
 package x.trident.core.datasource.sdk.persist.sqladapter;
 
-import x.trident.core.db.api.sqladapter.AbstractSql;
 import lombok.Getter;
+import x.trident.core.db.api.sqladapter.AbstractSql;
 
 /**
  * 删除数据源sql
@@ -12,24 +12,25 @@ import lombok.Getter;
  */
 @Getter
 public class DeleteDatabaseInfoSql extends AbstractSql {
+    private static final String DELETE_SQL = "DELETE from sys_database_info where db_name = ?";
 
     @Override
     protected String mysql() {
-        return "DELETE from sys_database_info where db_name = ?";
+        return DELETE_SQL;
     }
 
     @Override
     protected String sqlServer() {
-        return "DELETE from sys_database_info where db_name = ?";
+        return DELETE_SQL;
     }
 
     @Override
     protected String pgSql() {
-        return "DELETE from sys_database_info where db_name = ?";
+        return DELETE_SQL;
     }
 
     @Override
     protected String oracle() {
-        return "DELETE from sys_database_info where db_name = ?";
+        return DELETE_SQL;
     }
 }

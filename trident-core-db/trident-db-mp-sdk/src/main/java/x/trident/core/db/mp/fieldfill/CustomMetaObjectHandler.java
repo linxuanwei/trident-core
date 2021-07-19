@@ -1,11 +1,11 @@
 
 package x.trident.core.db.mp.fieldfill;
 
-import x.trident.core.auth.api.context.LoginContext;
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.reflection.MetaObject;
 import org.apache.ibatis.reflection.ReflectionException;
+import x.trident.core.auth.api.context.LoginContext;
 import x.trident.core.enums.StatusEnum;
 import x.trident.core.enums.YesOrNotEnum;
 
@@ -69,7 +69,7 @@ public class CustomMetaObjectHandler implements MetaObjectHandler {
     private Long getUserUniqueId() {
 
         try {
-            return LoginContext.me().getLoginUser().getUserId();
+            return LoginContext.me().getLoginUser().getUid();
         } catch (Exception e) {
             //如果获取不到就返回-1
             return -1L;

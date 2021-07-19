@@ -1,1 +1,3 @@
 多数据源模块的sdk
+
+数据库表：sys_database_info维护存储了多数据源

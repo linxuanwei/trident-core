@@ -29,6 +29,7 @@
         <module>trident-core-config</module>
         <module>trident-core-validator</module>
         <module>trident-core-auth</module>
+        <module>trident-core-jwt</module>
     </modules>
 
     <properties>

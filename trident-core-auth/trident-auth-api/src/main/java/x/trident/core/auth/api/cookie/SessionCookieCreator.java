@@ -21,8 +21,6 @@ public abstract class SessionCookieCreator {
      * @param cookieName            cookie的名称
      * @param cookieValue           cookie的值
      * @param sessionExpiredSeconds cookie过期时间
-     * @author 林选伟
-     * @date 2020/12/27 13:29
      */
     public Cookie createCookie(String cookieName, String cookieValue, Integer sessionExpiredSeconds) {
         Cookie cookie = new Cookie(cookieName, cookieValue);
@@ -33,9 +31,6 @@ public abstract class SessionCookieCreator {
 
     /**
      * 拓展cookie的配置
-     *
-     * @author 林选伟
-     * @date 2020/12/27 13:41
      */
     public abstract void expandCookieProp(Cookie cookie);
 

@@ -25,8 +25,6 @@ public interface LoginUserPropExpander {
      * 为loginUser赋值
      *
      * @param loginUser 当前登录用户
-     * @author 林选伟
-     * @date 2020/12/22 14:26
      */
     void expandAction(LoginUser loginUser);
 

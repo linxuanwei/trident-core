@@ -1,7 +1,7 @@
 package x.trident.core.auth.api.enums;
 
-import x.trident.core.auth.api.exception.AuthException;
 import lombok.Getter;
+import x.trident.core.auth.api.exception.AuthException;
 import x.trident.core.auth.api.exception.enums.AuthExceptionEnum;
 
 /**
@@ -49,9 +49,6 @@ public enum DataScopeTypeEnum {
 
     /**
      * 根据code获取枚举
-     *
-     * @author 林选伟
-     * @date 2020/10/29 18:59
      */
     public static DataScopeTypeEnum codeToEnum(Integer code) {
         if (null != code) {
