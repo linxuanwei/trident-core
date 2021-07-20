@@ -16,7 +16,8 @@
 
     <modules>
         <module>trident-auth-api</module>
-
+        <module>trident-auth-sdk</module>
+        <module>trident-auth-spring-boot-starter</module>
     </modules>
 
     <dependencies>

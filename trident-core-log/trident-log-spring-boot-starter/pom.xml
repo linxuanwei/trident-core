@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>x.trident</groupId>
+        <artifactId>trident-core-log</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>trident-log-spring-boot-starter</artifactId>
+
+    <packaging>jar</packaging>
+
+    <dependencies>
+
+        <!--登录日志的业务-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-log-business-login</artifactId>
+            <version>${trident.version}</version>
+        </dependency>
+
+        <!--日志管理-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-log-business-manage</artifactId>
+            <version>${trident.version}</version>
+        </dependency>
+
+        <!--接口请求日志记录-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-log-business-request</artifactId>
+            <version>${trident.version}</version>
+        </dependency>
+
+        <!--日志默认记录到库中-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-log-db-sdk</artifactId>
+            <version>${trident.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-log-file-sdk</artifactId>
+            <version>${trident.version}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  x.trident.core.i18n.starter.GunsTranslationAutoConfiguration
+org.springframework.context.ApplicationListener=\
+  x.trident.core.i18n.listener.TranslationDictInitListener

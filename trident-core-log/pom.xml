@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>x.trident</groupId>
+        <artifactId>trident-core</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>trident-core-log</artifactId>
+
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>trident-log-api</module>
+        <module>trident-log-business-login</module>
+        <module>trident-log-business-manage</module>
+        <module>trident-log-business-request</module>
+        <module>trident-log-db-sdk</module>
+        <module>trident-log-file-sdk</module>
+        <module>trident-log-spring-boot-starter</module>
+    </modules>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-core-base</artifactId>
+            <version>${trident.version}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

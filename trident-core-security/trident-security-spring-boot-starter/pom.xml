@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>x.trident</groupId>
+        <artifactId>trident-core-security</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>trident-security-spring-boot-starter</artifactId>
+
+    <packaging>jar</packaging>
+
+    <dependencies>
+
+        <!--xss模块-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-security-xss-sdk</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!--图形验证码模块-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-security-captcha-sdk</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!--count模块-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-security-count-sdk</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!--黑白名单校验-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-security-black-white-sdk</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!--请求响应加密解密模块-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-security-request-encrypt-and-decode-sdk</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

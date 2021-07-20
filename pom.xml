@@ -32,6 +32,18 @@
         <module>trident-core-jwt</module>
         <module>trident-core-office</module>
         <module>trident-core-email</module>
+        <module>trident-core-log</module>
+        <module>trident-core-wrapper</module>
+        <module>trident-util-pinyin</module>
+        <module>trident-core-business-system</module>
+        <module>trident-core-file</module>
+        <module>trident-core-sms</module>
+        <module>trident-core-seata</module>
+        <module>trident-core-security</module>
+        <module>trident-core-dict</module>
+        <module>trident-core-i18n</module>
+        <module>trident-core-mongodb</module>
+        <module>trident-business-message</module>
 
     </modules>
 

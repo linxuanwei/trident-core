@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  x.trident.core.system.starter.GunsUserCacheAutoConfiguration,\
+  x.trident.core.system.starter.GunsResourceCacheAutoConfiguration

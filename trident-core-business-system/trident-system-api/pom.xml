@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>x.trident</groupId>
+        <artifactId>trident-core-business-system</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>trident-system-api</artifactId>
+
+    <packaging>jar</packaging>
+
+    <dependencies>
+
+        <!--参数校验模块的api-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-validator-api</artifactId>
+            <version>${trident.version}</version>
+        </dependency>
+
+        <!--config模块的api-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-config-api</artifactId>
+            <version>${trident.version}</version>
+        </dependency>
+
+        <!--资源扫描器的api-->
+        <!--ResourceServiceApi需要用scanner-api的ResourceDefinition相关类-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-scanner-api</artifactId>
+            <version>${trident.version}</version>
+        </dependency>
+
+        <!--auth模块的api-->
+        <!--需要用到LoginUser这个类，所以要引用一下auth-api-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-auth-api</artifactId>
+            <version>${trident.version}</version>
+        </dependency>
+
+        <!--字典的api-->
+        <!--多语言类型，存在于字典表-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-dict-api</artifactId>
+            <version>${trident.version}</version>
+        </dependency>
+
+        <!--web-->
+        <!--ResourcePersistenceApi会用到web，用在提供feign接口时-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>

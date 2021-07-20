@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>trident-core-mongodb</artifactId>
+        <groupId>x.trident</groupId>
+        <version>1.0.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>trident-mongodb-file-sdk</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+
+        <!--auth模块的api-->
+        <!--记录日志时候，有可能需要记录当前登录用户id-->
+        <!--如果不要记录当前登录用户id时就不用本模块，所以optional=true-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-auth-api</artifactId>
+            <version>1.0.0</version>
+            <optional>true</optional>
+        </dependency>
+
+
+        <!--MongoDB模块的api-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-mongodb-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!--SpringBoot 与 MongoDB 整合-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+
+    </dependencies>
+</project>

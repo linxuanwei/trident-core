@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  x.trident.core.auth.starter.TridentAuthAutoConfiguration,\
+  x.trident.core.auth.starter.TridentSsoAutoConfiguration

@@ -245,7 +245,7 @@ public class DatabaseInfoServiceImpl extends ServiceImpl<DatabaseInfoMapper, Dat
     /**
      * 创建wrapper
      *
-     * @author liuhanqing
+     * @author 林选伟
      * @date 2021/1/8 14:16
      */
     private LambdaQueryWrapper<DatabaseInfo> createWrapper(DatabaseInfoRequest databaseInfoRequest) {

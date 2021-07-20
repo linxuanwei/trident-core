@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>x.trident</groupId>
+        <artifactId>trident-core-business-system</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>trident-system-spring-boot-starter</artifactId>
+
+    <packaging>jar</packaging>
+
+    <dependencies>
+
+        <!--应用管理的业务-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-system-business-app</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!--菜单管理的业务-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-system-business-menu</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!--组织机构管理的业务-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-system-business-organization</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!--资源管理的业务-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-system-business-resource</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!--角色管理的业务-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-system-business-role</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!--用户管理的业务-->
+        <!--默认使用内存缓存-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-system-business-user</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-cache-memory-sdk</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!--通知管理的业务-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-system-business-notice</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  x.trident.core.log.starter.TridentLogAutoConfiguration

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>x.trident</groupId>
+        <artifactId>trident-business-message</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>trident-message-db-sdk</artifactId>
+
+    <packaging>jar</packaging>
+
+    <dependencies>
+
+        <!--消息模块的api-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-message-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!--数据库sdk-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-db-mp-sdk</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <!--发送消息需要用到用户相关的接口-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-system-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

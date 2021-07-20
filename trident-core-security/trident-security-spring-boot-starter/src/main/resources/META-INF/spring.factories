@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  x.trident.core.security.starter.TridentSecurityAutoConfiguration,\
+  x.trident.core.security.starter.TridentXssAutoConfiguration,\
+  x.trident.core.security.starter.CounterAutoConfiguration,\
+  x.trident.core.security.starter.CaptchaAutoConfiguration

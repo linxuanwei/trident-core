@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>x.trident</groupId>
+        <artifactId>trident-core-auth</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>trident-auth-sdk</artifactId>
+
+    <packaging>jar</packaging>
+
+    <dependencies>
+
+        <!--auth本模块的api-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-auth-api</artifactId>
+            <version>${trident.version}</version>
+        </dependency>
+
+        <!--定时任务的api-->
+        <!--用来自动清理过期的登录用户缓存-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-timer-api</artifactId>
+            <version>${trident.version}</version>
+        </dependency>
+
+        <!--日志记录模块的api-->
+        <!--记录登录日志用-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-log-api</artifactId>
+            <version>${trident.version}</version>
+        </dependency>
+
+        <!--资源模块的api-->
+        <!--权限校验等功能，需要用到资源模块的接口-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-scanner-api</artifactId>
+            <version>${trident.version}</version>
+        </dependency>
+
+        <!--安全模块的api-->
+        <!--需要用到校验验证码的接口-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-security-api</artifactId>
+            <version>${trident.version}</version>
+        </dependency>
+
+        <!--system业务模块的api-->
+        <!--登录和鉴权需要用到用户相关的接口-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-system-api</artifactId>
+            <version>${trident.version}</version>
+        </dependency>
+
+        <!--jwt模块的api-->
+        <!--token用的jwt token-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>jwt-sdk</artifactId>
+            <version>${trident.version}</version>
+        </dependency>
+
+        <!--web模块-->
+        <!--web获取token的操作需要从http header中取-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+
+        <!--缓存的依赖-->
+        <!--session manager可以用redis，可以用内存的-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-cache-api</artifactId>
+            <version>${trident.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-cache-memory-sdk</artifactId>
+            <version>${trident.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-cache-redis-sdk</artifactId>
+            <version>${trident.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--系统消息业务模块的api-->
+        <!--获取当前登录用户的ws-url-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-message-api</artifactId>
+            <version>${trident.version}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

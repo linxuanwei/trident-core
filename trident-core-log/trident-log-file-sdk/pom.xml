@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>x.trident</groupId>
+        <artifactId>trident-core-log</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>trident-log-file-sdk</artifactId>
+
+    <packaging>jar</packaging>
+
+    <dependencies>
+
+        <!--日志模块的api-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-log-api</artifactId>
+            <version>${trident.version}</version>
+        </dependency>
+
+
+        <!--登陆模块的api-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-auth-api</artifactId>
+            <version>${trident.version}</version>
+        </dependency>
+
+        <!--config模块的api-->
+        <!--用来配置一些参数，例如日志的存放路径等-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-config-api</artifactId>
+            <version>${trident.version}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

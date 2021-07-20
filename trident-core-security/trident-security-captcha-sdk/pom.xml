@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>x.trident</groupId>
+        <artifactId>trident-core-security</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>trident-security-captcha-sdk</artifactId>
+
+    <dependencies>
+
+        <!--安全模块的api-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-security-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!--web模块-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--缓存模块的api-->
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-cache-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-cache-memory-sdk</artifactId>
+            <version>1.0.0</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>x.trident</groupId>
+            <artifactId>trident-cache-redis-sdk</artifactId>
+            <version>1.0.0</version>
+            <optional>true</optional>
+        </dependency>
+
+    </dependencies>
+</project>

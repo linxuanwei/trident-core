@@ -18,7 +18,7 @@ import x.trident.core.listener.ContextInitializedListener;
  * <p>
  * 当spring装配好配置后开始初始化
  *
- * @author liuhanqing
+ * @author 林选伟
  * @date 2021/1/17 21:14
  */
 @Slf4j

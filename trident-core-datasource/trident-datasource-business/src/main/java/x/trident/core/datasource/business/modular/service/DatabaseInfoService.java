@@ -57,7 +57,7 @@ public interface DatabaseInfoService extends IService<DatabaseInfo>, DataSourceA
      * 列表查询
      *
      * @param databaseInfoRequest 参数
-     * @author liuhanqing
+     * @author 林选伟
      * @date 2021/2/2 21:21
      */
     List<DatabaseInfo> findList(DatabaseInfoRequest databaseInfoRequest);
