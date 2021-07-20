@@ -14,16 +14,16 @@ public class JwtConstants {
     /**
      * jwt模块的名称
      */
-    public final static String JWT_MODULE_NAME = "trident-core-jwt";
+    public static final String JWT_MODULE_NAME = "trident-core-jwt";
 
     /**
      * 异常枚举的步进值
      */
-    public final static String JWT_EXCEPTION_STEP_CODE = "06";
+    public static final String JWT_EXCEPTION_STEP_CODE = "06";
 
     /**
      * jwt默认失效时间 1天
      */
-    public final static Long DEFAULT_JWT_TIMEOUT_SECONDS = 3600L * 24;
+    public static final Long DEFAULT_JWT_TIMEOUT_SECONDS = 3600L * 24;
 
 }
